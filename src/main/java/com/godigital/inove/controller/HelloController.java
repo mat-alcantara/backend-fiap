@@ -7,7 +7,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/")
-    public String hello() {
-        return "{\"message\": \"hello world!\"}";
+    public YourResponseObject hello() {
+        YourResponseObject response = new YourResponseObject();
+        response.setMessage("hello world!");
+        return response;
+    }
+
+    // Classe auxiliar para a resposta
+    public static class YourResponseObject {
+        private String message;
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
     }
 }
