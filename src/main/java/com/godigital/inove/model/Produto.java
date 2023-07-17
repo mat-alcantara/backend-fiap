@@ -17,12 +17,42 @@ public class Produto {
     private String nome;
     private String descricao;
     private BigDecimal valor;
-    private int duracaoHoras;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private int duracaohoras;
+    private LocalDateTime createdat;
+    private LocalDateTime updatedat;
 
     public void setId(Long id) {
     }
 
-    // Getters e Setters (Omissos para brevidade)
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public int getDuracaoHoras() {
+        return duracaohoras;
+    }
+
+    public void setDuracaoHoras(int duracaoHoras) {
+        this.duracaohoras = duracaohoras;
+    }
 }

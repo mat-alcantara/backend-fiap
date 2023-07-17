@@ -1,5 +1,6 @@
 package com.godigital.inove.controller;
 
+import com.godigital.inove.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,15 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import com.godigital.inove.service.AuthService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/authenticate")
 public class AuthenticationController {
 
     @Autowired
-    private AuthService authenticationService;
+    private AuthService authService;
 
-    @PostMapping("/authenticate")
-    public ResponseEntity<?> authenticate(@RequestParam String email, @RequestParam String password) {
-        String jwt = authenticationService.authenticate(email, password);
+    @PostMapping
+    public ResponseEntity<?> authenticate(@RequestBody User user) {
+        String jwt = authService.authenticate(user.getEmail(), user.getPassword());
 
         if (jwt != null) {
             return ResponseEntity.ok().header("Authorization", "Bearer " + jwt).build();

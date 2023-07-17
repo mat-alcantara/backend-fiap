@@ -16,7 +16,7 @@ public class User {
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
 
-    private String username;
+    private String email;
     private String password;
 
     public String getPassword() {
@@ -29,5 +29,13 @@ public class User {
 
     public String getId() {
         return new String(String.valueOf(id));
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
