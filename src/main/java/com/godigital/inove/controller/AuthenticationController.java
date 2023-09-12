@@ -22,7 +22,7 @@ public class AuthenticationController {
         if (jwt != null) {
             return ResponseEntity.ok().header("Authorization", "Bearer " + jwt).build();
         } else {
-            return ResponseEntity.status(401).body("Authentication failed"); // Trate os erros de autenticação de maneira adequada
+            return ResponseEntity.status(401).body("Authentication failed");
         }
     }
 }

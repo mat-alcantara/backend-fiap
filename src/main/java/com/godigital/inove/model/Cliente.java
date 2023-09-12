@@ -22,8 +22,8 @@ public class Cliente {
     private String uf;
     private String telefone;
     private String origem;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private LocalDateTime createdat;
+    private LocalDateTime updatedat;
 
     public Long getId() {
         return id;
